@@ -1,6 +1,6 @@
-require 'pry'
+#require 'pry'
 
-require "sweet_tooth/version"
+#require "sweet_tooth/version"
 
 require_relative "sweet_tooth/version"
 require_relative "sweet_tooth/cli"
