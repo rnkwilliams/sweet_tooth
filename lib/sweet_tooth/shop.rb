@@ -4,17 +4,17 @@ class SweetTooth::Shop
   @@all = []
   
   
-  def self.list_of_shops
-    shop = self.new
-    shop.name = "Sprinkles"
-    shop.dessert_type = "Cupcakes, Bakery"
-    shop.price_range = "Inexpensive"
-    shop.location = "Dallas"
-    shop.contact = "817-841-9856"
-    
-    shop = []
-
-  end
+   def self.list_of_shops
+     shop = self.new
+     shop.name = "Sprinkles"
+     shop.dessert_type = "Cupcakes, Bakery"
+     shop.price_range = "Inexpensive"
+     shop.location = "Dallas"
+     shop.contact = "817-841-9856"
+      
+     shop = []
+  
+   end
   
   #def self.all
     #get_shops if @@all == []

@@ -9,17 +9,24 @@ class SweetTooth::CLI
   
   def list_shops
       puts ""
-      puts "Top 20 best dessert shops in Dallas."
+      puts "Top 20 best dessert shops in Dallas, TX."
+      puts ""
+      puts "1. Sprinkles"
+      puts "2. Vals Cheesecake"
+      puts "3. Milk Bar"
+      puts "4. Cake Bar"
+      
 
       @shop = SweetTooth::Shop.list_of_shops
       @shop.each.with_index(1) do |shop, i|
-          puts "#{i}. #{shop.name} - #{shop.dessert_type}"
+         puts "#{i}. #{shop.name} - #{shop.dessert_type}"
   end
 
   def menu
       input = nil
       while input != "exit"
-      puts "Enter the number of the shop you'd like more info on or type 'list' to see shops again or type 'exit':"
+      puts ""
+      puts "Enter the number of the shop you'd like more info on.Type 'list' to see shops\n again or type 'exit':"
       input = gets.strip.downcase
 
       if input.to_i > 0
@@ -37,3 +44,4 @@ class SweetTooth::CLI
   end
 end
 end
+
