@@ -1,18 +1,18 @@
 class SweetTooth::Shop
   attr_accessor :name, :dessert_type, :price_range, :location, :contact
   
-  @@all = []
+  #@@all = []
   
   
    def self.list_of_shops
-     shop = self.new
-     shop.name = "Sprinkles"
-     shop.dessert_type = "Cupcakes, Bakery"
-     shop.price_range = "Inexpensive"
-     shop.location = "Dallas"
-     shop.contact = "817-841-9856"
+     
+     self.new_from_collection
+   end
+   
+   def self.new_from_collection
+    shops = []
       
-     shop = []
+     
   
    end
   
@@ -25,4 +25,19 @@ class SweetTooth::Shop
     #@@all << self
   #end
 end
+
+     #shop_1 = self.new
+     #shop_1.name = "Sprinkles"
+     #shop_1.dessert_type = "Cupcakes, Bakery"
+     #shop_1.price_range = "Inexpensive"
+     #shop_1.location = "Dallas"
+     #shop_1.contact = "817-841-9856"
+     
+     #shop_2 = self.new
+     #shop_2.name = "Vals Cheesecake"
+     #shop_2.dessert_type = "Cheesecake, Bakery"
+     #shop_2.price_range = "Expensive"
+     #shop_2.location = "Dallas"
+     #shop_2.contact = "817-555-9856"
+     #shop = [shop_1, shop_2]
   
