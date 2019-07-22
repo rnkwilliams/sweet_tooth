@@ -1,6 +1,6 @@
-#require 'pry'
-#require 'httparty'
-#require 'dotenv/load'
+require 'pry'
+require 'httparty'
+require 'dotenv/load'
 
 #require "sweet_tooth/version"
 
