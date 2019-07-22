@@ -9,3 +9,4 @@ class SweetTooth::API
     SweetTooth::Shop.new_from_collection(shops)
   end
 end
+

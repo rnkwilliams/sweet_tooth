@@ -4,12 +4,11 @@ class SweetTooth::CLI
     puts "Welcome to Sweet Tooth!"
     list_shops
     menu
-    goodbye
   end
   
   def list_shops
       puts ""
-      puts "Top 20 best dessert shops in Dallas, TX."
+      puts "***Top 20 best dessert shops in Dallas, TX.***"
       puts ""
       @shop = SweetTooth::Shop.list_of_shops
       @shop.each.with_index(1) do |shop, i|
@@ -28,13 +27,17 @@ class SweetTooth::CLI
           puts "#{the_shop.name} - #{the_shop.dessert_type} - #{the_shop.price_range} - #{the_shop.location} - #{the_shop.contact}"
       elsif input == "list"
           list_shops
+      elsif input == "exit"
+          goodbye
       else
+          puts ""
           puts "Invalid selection, type list or exit."
       end
     end
   end
 
   def goodbye
+    puts ""
     puts "Thank you for using Sweet Tooth!!!"
   end
 end
