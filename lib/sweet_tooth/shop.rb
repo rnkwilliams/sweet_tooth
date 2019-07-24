@@ -2,19 +2,24 @@ class SweetTooth::Shop
   attr_accessor :name, :dessert_type, :price_range, :location, :contact
   
   
-  @@all = []
+  #@@all = []
   
   
   def initialize(attrs)
+    @name = attrs[:name]
+    @dessert_type = attrs[:categories[2][1]]
+    @price_range = attrs[:price]
+    @location = attrs[:display_address]
+    @contact = attrs[:display_phone]
   
    save
   end
   
-   def self.list_of_shops
+   #def self.list_of_shops
      
-     self.new_from_collection
+     #self.new_from_collection
     #binding.pry
-   end
+   #end
    
    def self.new_from_collection(shops)
     shops.each do |attrs|
@@ -22,20 +27,20 @@ class SweetTooth::Shop
    end 
   end
 
-  def self.get_shops
-    SweetTooth::API.get_shops
+ # def self.get_shops
+ #   SweetTooth::API.get_shops
     all
-  end
+ # end
   
-  def self.all
-    get_shops if @@all == []
-    @@all
-  end
+  #def self.all
+    #get_shops if @@all == []
+    #@@all
+  #end
   
- def save
-    @@all << self
-  end
-end
+ #def save
+    #@@all << self
+  #end
+#end
 
 #SweetTooth::Shop.list_of_shops
 
