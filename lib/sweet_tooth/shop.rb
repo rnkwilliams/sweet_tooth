@@ -27,15 +27,15 @@ class SweetTooth::Shop
    end 
   end
 
- # def self.get_shops
- #   SweetTooth::API.get_shops
-    #all
- # end
+  def self.get_shops
+    SweetTooth::API.get_shops
+    all
+  end
   
-  #def self.all
-    #get_shops if @@all == []
-    #@@all
-  #end
+  def self.all
+    get_shops if @@all == []
+    @@all
+  end
   
   def save
     @@all << self

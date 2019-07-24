@@ -10,7 +10,7 @@ class SweetTooth::CLI
       puts ""
       puts "***Top 20 best dessert shops in Dallas, TX.***"
       puts ""
-      @shop = SweetTooth::Shop.list_of_shops
+      @shop = SweetTooth::Shop.all
       @shop.each.with_index(1) do |shop, i|
          puts "#{i}. #{shop.name} - #{shop.dessert_type}"
   end
