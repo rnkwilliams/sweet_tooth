@@ -6,11 +6,11 @@ class SweetTooth::Shop
   
   
   def initialize(attrs)
-    @name = attrs[:name]
-    @dessert_type = attrs[:categories[2][1]]
-    @price_range = attrs[:price]
-    @location = attrs[:display_address]
-    @contact = attrs[:display_phone]
+    @name = attrs["name"]
+    @dessert_type = attrs["categories"][1]["title"] unless attrs["categories"][1].nil?
+    @price_range = attrs["price"]
+    @location = attrs["display_address"]
+    @contact = attrs["display_phone"]
   
    save
   end
@@ -23,6 +23,7 @@ class SweetTooth::Shop
    
    def self.new_from_collection(shops)
     shops.each do |attrs|
+      #binding.pry
         new(attrs)
    end 
   end

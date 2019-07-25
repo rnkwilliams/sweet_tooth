@@ -1,6 +1,8 @@
 class SweetTooth::CLI
   
   def call
+    SweetTooth::API.get_shops
+    
     puts "Welcome to Sweet Tooth!"
     list_shops
     menu
