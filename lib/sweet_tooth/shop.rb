@@ -9,9 +9,9 @@ class SweetTooth::Shop
     @name = attrs["name"]
     @dessert_type = attrs["categories"][1]["title"] unless attrs["categories"][1].nil?
     @price_range = attrs["price"]
-    @location = attrs["display_address"]
+    @location = attrs["location"][7]["display_address"]
     @contact = attrs["display_phone"]
-  
+  binding.pry
    save
   end
    
