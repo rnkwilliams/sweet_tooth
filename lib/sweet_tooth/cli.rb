@@ -22,7 +22,9 @@ class SweetTooth::CLI
       while input != "exit"
       puts ""
       puts "Start by entering the number of the shop you'd like more info on. Type 'list' to see a shop again or type 'exit':"
+      puts ""
       input = gets.strip.downcase
+      puts ""
 
       if input.to_i > 0
           the_shop = @shop[input.to_i-1]

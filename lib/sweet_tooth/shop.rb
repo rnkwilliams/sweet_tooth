@@ -14,16 +14,9 @@ class SweetTooth::Shop
   
    save
   end
-  
-   #def self.list_of_shops
-     
-     #self.new_from_collection
-    
-   #end
    
    def self.new_from_collection(shops)
     shops.each do |attrs|
-      #binding.pry
         new(attrs)
    end 
   end
