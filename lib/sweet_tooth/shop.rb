@@ -7,11 +7,12 @@ class SweetTooth::Shop
   
   def initialize(attrs)
     @name = attrs["name"]
-    @dessert_type = attrs["categories"][1]["title"] unless attrs["categories"][1].nil?
+    @dessert_type = attrs["categories"][2]["title"] unless attrs["categories"][2].nil?
     @price_range = attrs["price"]
-    @location = attrs["location"][7]["display_address"]
+    @location = attrs["location"]["display_address"]
     @contact = attrs["display_phone"]
-  binding.pry
+    
+  #binding.pry
    save
   end
    
@@ -20,7 +21,7 @@ class SweetTooth::Shop
         new(attrs)
    end 
   end
-
+  
   def self.get_shops
     SweetTooth::API.get_shops
     all

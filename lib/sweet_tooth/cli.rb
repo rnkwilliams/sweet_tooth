@@ -14,7 +14,7 @@ class SweetTooth::CLI
       puts ""
       @shop = SweetTooth::Shop.all
       @shop.each.with_index(1) do |shop, i|
-         puts "#{i}. #{shop.name} - #{shop.dessert_type}"
+         puts "#{i}. #{shop.name}" #- #{shop.dessert_type}
   end
 
   def menu
@@ -24,7 +24,6 @@ class SweetTooth::CLI
       puts "Start by entering the number of the shop you'd like more info on. Type 'list' to see a shop again or type 'exit':"
       puts ""
       input = gets.strip.downcase
-      puts ""
 
       if input.to_i > 0
           the_shop = @shop[input.to_i-1]
