@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["'rnkprice07@gmail.com'"]
 
   spec.summary       = %q{Sweet Tooth}
-  spec.description   = %q{Sweet Tooth}
+  spec.description   = %q{This Ruby Gem provides a CLI to view the list of the top 10 dessert shops in Dallas, TX.}
   spec.homepage      = "https://github.com/rnkwilliams/sweet_tooth"
   spec.license       = "MIT"
 
