@@ -1,18 +1,16 @@
 class SweetTooth::Shop
   attr_accessor :name, :dessert_type, :price_range, :location, :contact
   
-  
   @@all = []
-  
   
   def initialize(attrs)
     @name = attrs["name"]
-    @dessert_type = attrs["categories"][2]["title"] unless attrs["categories"][2].nil?
+    @dessert_type = attrs["categories"][0]["title"] unless attrs["categories"][0].nil?
     @price_range = attrs["price"]
     @location = attrs["location"]["display_address"].join(' ')
     @contact = attrs["display_phone"]
     
-  #binding.pry
+  binding.pry
    save
   end
    
