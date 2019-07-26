@@ -9,7 +9,7 @@ class SweetTooth::Shop
     @name = attrs["name"]
     @dessert_type = attrs["categories"][2]["title"] unless attrs["categories"][2].nil?
     @price_range = attrs["price"]
-    @location = attrs["location"]["display_address"]
+    @location = attrs["location"]["display_address"].join(' ')
     @contact = attrs["display_phone"]
     
   #binding.pry

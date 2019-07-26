@@ -2,17 +2,18 @@ class SweetTooth::CLI
   @@grn="\e[1;32m"
   @@white="\e[0m"
   @@blu="\e[1;34m"
+  @@mag="\e[1;35m"
   
   def call
     SweetTooth::API.get_shops
-    puts "Welcome to Sweet Tooth!"
+    puts "Welcome to #{@@mag}Sweet Tooth#{@@white}!"
     list_shops
     menu
   end
   
   def list_shops
       puts ""
-      puts "***Top 10 best dessert shops in Dallas, TX.***"
+      puts "*** The Top 10 Best Dessert Shops in Dallas, TX. ***"
       puts ""
       @shop = SweetTooth::Shop.all
       @shop.each.with_index(1) do |shop, i|
@@ -31,9 +32,9 @@ class SweetTooth::CLI
           the_shop = @shop[input.to_i-1]
           puts "#{@@blu}#{the_shop.name}#{@@white}"
           puts "#{the_shop.dessert_type}" 
-          putsPrice range: #{@@grn}#{the_shop.price_range}#{@@white} 
-          - \n#{the_shop.location} 
-          - \n#{the_shop.contact}"
+          puts "Price range: #{@@grn}#{the_shop.price_range}#{@@white}" 
+          puts "#{the_shop.location}"
+          puts "#{the_shop.contact}"
       elsif input == "list"
           list_shops
       elsif input == "exit"
@@ -47,7 +48,7 @@ class SweetTooth::CLI
 
   def goodbye
     puts ""
-    puts "Thank you for using Sweet Tooth!!!"
+    puts "Thank you for using #{@@mag}Sweet Tooth#{@@white}!!!"
   end
 end
 end
