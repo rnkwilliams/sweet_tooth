@@ -1,8 +1,10 @@
 class SweetTooth::CLI
+  @@grn="\e[1;32m"
+  @@white="\e[0m"
+  @@blu="\e[1;34m"
   
   def call
     SweetTooth::API.get_shops
-    
     puts "Welcome to Sweet Tooth!"
     list_shops
     menu
@@ -10,24 +12,28 @@ class SweetTooth::CLI
   
   def list_shops
       puts ""
-      puts "***Top 20 best dessert shops in Dallas, TX.***"
+      puts "***Top 10 best dessert shops in Dallas, TX.***"
       puts ""
       @shop = SweetTooth::Shop.all
       @shop.each.with_index(1) do |shop, i|
-         puts "#{i}. #{shop.name}" #- #{shop.dessert_type}
+         puts "#{i}. #{shop.name}"
   end
 
   def menu
       input = nil
       while input != "exit"
       puts ""
-      puts "Start by entering the number of the shop you'd like more info on. Type 'list' to see a shop again or type 'exit':"
+      puts "Start by entering the number of the shop for more info. Type 'list' to see the \nlist of shops, or type 'exit':"
       puts ""
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && @shop
           the_shop = @shop[input.to_i-1]
-          puts "#{the_shop.name} - #{the_shop.dessert_type} - #{the_shop.price_range} - #{the_shop.location} - #{the_shop.contact}"
+          puts "#{@@blu}#{the_shop.name}#{@@white}"
+          puts "#{the_shop.dessert_type}" 
+          putsPrice range: #{@@grn}#{the_shop.price_range}#{@@white} 
+          - \n#{the_shop.location} 
+          - \n#{the_shop.contact}"
       elsif input == "list"
           list_shops
       elsif input == "exit"
