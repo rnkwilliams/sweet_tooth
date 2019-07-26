@@ -9,9 +9,7 @@ class SweetTooth::Shop
     @price_range = attrs["price"]
     @location = attrs["location"]["display_address"].join(' ')
     @contact = attrs["display_phone"]
-    
-  binding.pry
-   save
+    save
   end
    
    def self.new_from_collection(shops)
