@@ -28,7 +28,7 @@ class SweetTooth::CLI
       puts ""
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i < 11
           the_shop = @shop[input.to_i-1]
           puts "#{@@blu}#{the_shop.name}#{@@white}"
           puts "#{the_shop.dessert_type}" 
@@ -41,7 +41,7 @@ class SweetTooth::CLI
           goodbye
       else
           puts ""
-          puts "Invalid selection, type 'list' or 'exit'."
+          puts "#{@@blu}Invalid selection, type 'list' or 'exit'.#{@@white}"
       end
     end
   end
