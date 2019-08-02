@@ -23,6 +23,10 @@ class SweetTooth::Shop
     all
   end
   
+  def self.find_all_by_name (string)
+   all.select { |s| s.name.include?(string)}
+  end 
+  
   def self.all
     get_shops if @@all == []
     @@all
