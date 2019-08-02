@@ -12,10 +12,10 @@ class SweetTooth::Shop
     save
   end
    
-   def self.new_from_collection(shops)
+  def self.new_from_collection(shops)
     shops.each do |attrs|
         new(attrs)
-   end 
+   end
   end
   
   def self.get_shops
