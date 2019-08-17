@@ -6,7 +6,6 @@ class SweetTooth::API
     })
 
     shops = resp["businesses"]
-    binding.pry
     SweetTooth::Shop.new_from_collection(shops)
   end
 end
